@@ -1090,6 +1090,7 @@ public class formNhanVien extends javax.swing.JFrame {
 
     private void huyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_huyButtonActionPerformed
         // TODO add your handling code here:
+        System.out.println("view.formNhanVien.huyButtonActionPerformed()");
         huyHoaDon();
     }//GEN-LAST:event_huyButtonActionPerformed
 

@@ -330,9 +330,6 @@
                                 </TitledBorder>
                               </Border>
                             </Property>
-                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[32767, 32767]"/>
-                            </Property>
                             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[300, 169]"/>
                             </Property>
@@ -419,9 +416,6 @@
                                   <Color PropertyName="color" blue="cc" green="33" red="0" type="rgb"/>
                                 </TitledBorder>
                               </Border>
-                            </Property>
-                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[32767, 32767]"/>
                             </Property>
                             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[330, 190]"/>
