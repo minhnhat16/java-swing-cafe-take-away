@@ -151,7 +151,7 @@ public class panelCTTD extends javax.swing.JPanel {
 //        System.out.println("text " + text);
         List<ThucDon> listThucDon = Dao_ThucDon.layDSTD_ten(text);
         String[] s;
-        if (listThucDon != null) {
+        if (listThucDon != null && !listThucDon.isEmpty()) {
             s = new String[listThucDon.size()];
             for (int i = 0; i < listThucDon.size(); i++) {
                 s[i] = listThucDon.get(i).getTen();

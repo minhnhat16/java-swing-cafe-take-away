@@ -243,7 +243,6 @@ public class panelDSNV extends javax.swing.JPanel {
                     t.nhanVien();
                     t.setSize(600, 350);
                     t.setVisible(true);
-
                     formThongTinNVOpened = true;//dánh đấu đẫ mở
                 } else {
                     JOptionPane.showMessageDialog(this, "Cửa sổ thông tin nhân viên đã mở!");

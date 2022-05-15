@@ -97,6 +97,7 @@ public class Dao_ThucDon {
         try {
             Statement s=c.createStatement();
             ResultSet rs=s.executeQuery(sql);
+            System.out.println(list);
             while (rs.next()) {                
                 list.add(new ThucDon(rs.getInt(1), rs.getString(2), rs.getInt(3)));
                 System.out.println(rs.getString(2));

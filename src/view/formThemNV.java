@@ -531,6 +531,7 @@ public class formThemNV extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         evt.toString();
+        System.out.println("form thêm nhân viên đóng");
         panelDSNV.formThemNVOpened = false; //đóng
     }//GEN-LAST:event_formWindowClosing
 
