@@ -15,7 +15,7 @@ public class Regex {
     public static final String SDT = "0[0-9]{9}";
     public static final String TAI_KHOAN = "[\\w\\S]*";
     public static final String NUMBER = "[0-9]*";
-    public static final String SLCAN = "\\d*\\.\\d*";
+    public static final String SLCAN = "\\d*\\.?\\d*";
 
 //    public static void main(String[] args) {
 //        System.out.println("Diachi nha".matches(TAI_KHOAN));

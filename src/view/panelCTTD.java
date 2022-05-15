@@ -106,7 +106,7 @@ public class panelCTTD extends javax.swing.JPanel {
         String slcan = txtSoLuongCan.getText().trim();
         if (slcan.equals("")) {
             return 0;
-        } else if (Valid.isTextValid(slcan, Regex.SLCAN)) {
+        } else if (!Valid.isTextValid(slcan, Regex.SLCAN)) {
             return -1;
         } else {
             return 1;
