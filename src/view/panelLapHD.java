@@ -38,13 +38,15 @@ public class panelLapHD extends javax.swing.JPanel {
      */
     private DefaultTableModel dtm;
     private List<CTHD> listCTHD;
+    private List<ThucDon> listDSTD;
 
     public panelLapHD() {
         initComponents();
         tableLapHoaDon.getTableHeader().setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
         snipperSoLuong.setModel(new SpinnerNumberModel(1, 1, 50, 1));
+        listDSTD = Dao_ThucDon.layDSTD();
         loadComboBoxQuay(Dao_QuayCafe.layDSQuay());
-        loadComboBoxThucDon(Dao_ThucDon.layDSTD());
+        loadComboBoxThucDon(listDSTD);
         khoiTao();
         setMaxLength();
         chuaDu.setText("");
@@ -624,20 +626,23 @@ public class panelLapHD extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getButton() == MouseEvent.BUTTON1) {
             if (isAllValid()) {
-                String maHD = txtMaHD.getText().trim().toUpperCase();
-                int maTD = Dao_ThucDon.layMa((String) cbbTenDoUong.getSelectedItem());
-                int slLy = (int) snipperSoLuong.getValue();
-                int giaBan = Integer.parseInt(txtGiaBan.getText().trim());
-                if (!daTonTai(maHD, maTD)) {
-                    txtMaHD.setEditable(false);
-                    listCTHD.add(new CTHD(maHD, maTD, slLy, giaBan));
-                    addListToTable(listCTHD);
-                    cbbQuay.setEnabled(false);
-                    labelTongTien.setText(tongTien() + "");
+                if (listDSTD.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Không tìm thấy thực đơn!");
                 } else {
-                    JOptionPane.showMessageDialog(this, "Thức uống đã được thêm!");
+                    String maHD = txtMaHD.getText().trim().toUpperCase();
+                    int maTD = Dao_ThucDon.layMa((String) cbbTenDoUong.getSelectedItem());
+                    int slLy = (int) snipperSoLuong.getValue();
+                    int giaBan = Integer.parseInt(txtGiaBan.getText().trim());
+                    if (!daTonTai(maHD, maTD)) {
+                        txtMaHD.setEditable(false);
+                        listCTHD.add(new CTHD(maHD, maTD, slLy, giaBan));
+                        addListToTable(listCTHD);
+                        cbbQuay.setEnabled(false);
+                        labelTongTien.setText(tongTien() + "");
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Thức uống đã được thêm!");
+                    }
                 }
-
             }
         }
     }//GEN-LAST:event_btnThemMouseClicked
