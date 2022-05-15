@@ -38,13 +38,14 @@ public class panelLapHD extends javax.swing.JPanel {
      */
     private DefaultTableModel dtm;
     private List<CTHD> listCTHD;
-    private List<ThucDon> listDSTD;
+    public static List<ThucDon> listDSTD;
 
     public panelLapHD() {
         initComponents();
         tableLapHoaDon.getTableHeader().setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
         snipperSoLuong.setModel(new SpinnerNumberModel(1, 1, 50, 1));
         listDSTD = Dao_ThucDon.layDSTD();
+        //listDSTD=new ArrayList<>();
         loadComboBoxQuay(Dao_QuayCafe.layDSQuay());
         loadComboBoxThucDon(listDSTD);
         khoiTao();
@@ -91,7 +92,7 @@ public class panelLapHD extends javax.swing.JPanel {
         });
     }
 
-    private void loadComboBoxThucDon(List<ThucDon> list) {
+    public static void loadComboBoxThucDon(List<ThucDon> list) {
         cbbTenDoUong.removeAllItems();
         list.forEach((ThucDon q) -> {
             cbbTenDoUong.addItem(q.getTen());
@@ -726,7 +727,7 @@ public class panelLapHD extends javax.swing.JPanel {
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnXoa;
     private javax.swing.JComboBox<String> cbbQuay;
-    private javax.swing.JComboBox<String> cbbTenDoUong;
+    private static javax.swing.JComboBox<String> cbbTenDoUong;
     private javax.swing.JLabel chuaDu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

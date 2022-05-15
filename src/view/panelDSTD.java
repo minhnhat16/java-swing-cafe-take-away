@@ -288,6 +288,8 @@ public class panelDSTD extends javax.swing.JPanel {
                     if (Dao_ThucDon.themThucDon(txtTenDoUong.getText().trim().toUpperCase(), Integer.parseInt(txtGiaTien.getText().trim())) != 0) {
                         //lấy danh sách
                         layDSTD(Dao_ThucDon.layDSTD());
+                        panelLapHD.listDSTD=Dao_ThucDon.layDSTD();
+                        panelLapHD.loadComboBoxThucDon(panelLapHD.listDSTD);
                         JOptionPane.showMessageDialog(this, "Thêm Thành Công!");
                     } else {
                         JOptionPane.showMessageDialog(this, "Thêm Thất Bại!");
@@ -329,6 +331,8 @@ public class panelDSTD extends javax.swing.JPanel {
                     int gia = Integer.parseInt(txtGiaTien.getText().trim());
                     if (Dao_ThucDon.suaTD(id, ten, gia) != 0) {
                         layDSTD(Dao_ThucDon.layDSTD());
+                        panelLapHD.listDSTD=Dao_ThucDon.layDSTD();
+                        panelLapHD.loadComboBoxThucDon(panelLapHD.listDSTD);
                         JOptionPane.showMessageDialog(this, "Cập Nhật Thành Công!");
                         reset();
                     } else {
@@ -349,6 +353,8 @@ public class panelDSTD extends javax.swing.JPanel {
                 int id = (int) tableDSTD.getValueAt(row, 0);
                 if (Dao_ThucDon.xoaTD(id) != 0) {
                     layDSTD(Dao_ThucDon.layDSTD());
+                    panelLapHD.listDSTD=Dao_ThucDon.layDSTD();
+                        panelLapHD.loadComboBoxThucDon(panelLapHD.listDSTD);
                     JOptionPane.showMessageDialog(this, "Xóa Thành Công!");
                     reset();
                 } else {
