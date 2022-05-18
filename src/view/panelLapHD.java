@@ -475,6 +475,7 @@ public class panelLapHD extends javax.swing.JPanel {
         txtGiaBan.setText("");
         cbbTenDoUong.setEnabled(true);
         cbbQuay.setEnabled(true);
+        listCTHD.clear();
     }
 
     private void resetCTHD() {
