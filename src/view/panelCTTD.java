@@ -224,6 +224,7 @@ public class panelCTTD extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         jPanel79.add(cbbTenTD, gridBagConstraints);
 
+        cbbNguyenLieu.setMaximumRowCount(15);
         cbbNguyenLieu.setPreferredSize(new java.awt.Dimension(200, 28));
         cbbNguyenLieu.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
