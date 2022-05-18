@@ -235,6 +235,7 @@ public class panelCaNV extends javax.swing.JPanel {
         gridBagConstraints.gridy = 1;
         jPanel66.add(jLabel51, gridBagConstraints);
 
+        cbbNhanVien.setMaximumRowCount(15);
         cbbNhanVien.setPreferredSize(new java.awt.Dimension(140, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
