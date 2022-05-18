@@ -132,15 +132,14 @@ public class Dao_NguyenLieu {
     }
     
     //thêm nguyên liệu
-    public static int luuNguyenLieu(String maNL, String tenNL, String donViTinh){
+    public static int luuNguyenLieu(String tenNL, String donViTinh){
         CallableStatement cs;
-        String sql = "insert into nguyen_lieu values(?, ?, ?)";
+        String sql = "insert into nguyen_lieu values(?, ?)";
         Connection con = KetNoi.layKetNoi();
         try {
             cs = con.prepareCall(sql);
-            cs.setString(1, maNL);
-            cs.setString(2, tenNL);
-            cs.setString(3, donViTinh);
+            cs.setString(1, tenNL);
+            cs.setString(2, donViTinh);
             return cs.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(Dao_NguyenLieu.class.getName()).log(Level.SEVERE, null, ex);

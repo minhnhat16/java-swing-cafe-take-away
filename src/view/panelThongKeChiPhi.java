@@ -161,7 +161,7 @@ public class panelThongKeChiPhi extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnThongKeActionPerformed
-        // TODO add your handling code here:   
+  
         java.sql.Date sql_start_date ;
         java.sql.Date sql_end_date;
         try{

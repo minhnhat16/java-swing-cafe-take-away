@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.NguyenLieu;
 import model.TaoPN;
@@ -30,6 +31,8 @@ public final class panelTaoPN extends javax.swing.JPanel {
     private List<NguyenLieu> lsnguyenlieu;//lay danh sach nguyen lieu (ComboxNguyenLieu)
     private final List<TaoPN> lsThem;//Luu danh sach PN chua luu vao DB
     private Boolean p;
+    private int SoLuong, GiaTien;
+    private String date ;
 
     public panelTaoPN() {
         initComponents();
@@ -66,6 +69,11 @@ public final class panelTaoPN extends javax.swing.JPanel {
             });
         }
 
+    }
+     //để đẩy về DB
+    public static String setDate(String ngay) {
+        String[] a = ngay.split("/");
+        return a[2] + "-" + a[1] + "-" + a[0];
     }
 
     @SuppressWarnings("unchecked")
@@ -329,16 +337,13 @@ public final class panelTaoPN extends javax.swing.JPanel {
 
     }
 
-    public static String getDate(String ngay) {
-        String[] a = ngay.split("-");
-        return a[2] + "/" + a[1] + "/" + a[0];
-    }
+
 
     private String getDateLocal() {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             //  Date now;
-            String dateString = getDate(LocalDate.now().toString());
+            String dateString = setDate(LocalDate.now().toString());
             System.out.println(LocalDate.now().toString());
 
             return dateString;
@@ -379,6 +384,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
         ///LAY MA NHAN VIEN . ADD VO DB . VI DU MA_NV=1
         String maphieunhap = txt_MaPhieuNhap.getText();
         if (this.isExistMA_PN(maphieunhap)) {
+            JOptionPane.showMessageDialog(this, "Mã phiếu nhập đã tồn tại!");
             System.out.println("-(panelTaoPN.java Line:399)-THONG BAO MA PHIEU NHAP DA TON TAI");
             return;
         }
@@ -387,11 +393,14 @@ public final class panelTaoPN extends javax.swing.JPanel {
         int MA_QUAY = 1;
 
         String TenNguyenLieu = ComboxNguyenLieu.getSelectedItem().toString();
-        int SoLuong = 0, GiaTien = 0;
         try {
-            MA_QUAY = Integer.parseInt(comboxQuay.getSelectedItem().toString());
+            String item=comboxQuay.getSelectedItem().toString();
+            String[] l = item.split(" ");
+            MA_QUAY = Integer.parseInt(l[1]);
+          
             SoLuong = Integer.parseInt(txtSoLuong.getText());
             GiaTien = Integer.parseInt(txtGiaTien.getText());
+            System.out.println("................."+SoLuong);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -432,13 +441,16 @@ public final class panelTaoPN extends javax.swing.JPanel {
     }
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         //btn save
-        this.lsThem.forEach(item -> {
-            if (Dao_PhieuNhap.themPhieuNhap(item.getMA_PHIEU_NHAP(), item.getNGAY_NHAP(), item.getMA_NV(), item.getMA_QUAY()) != 0) {
+         this.lsThem.forEach(item -> {
+            date = setDate(item.getNGAY_NHAP().trim());
+            if (Dao_PhieuNhap.themPhieuNhap(item.getMA_PHIEU_NHAP(), date, item.getMA_NV(), item.getMA_QUAY()) != 0) {
                 Dao_CTPN.themCTPN(item.getMA_PHIEU_NHAP(), item.getMA_NGUYEN_LIEU(), item.getSO_LUONG(), item.getPRICE());
+                JOptionPane.showMessageDialog(this, "Lưu thành công phiếu nhập!");
                 System.out.println("---Them Thanh Cong Phieu Nhap ----");
                 //the method removes all the elements from the arraylist
 
             } else {
+                JOptionPane.showMessageDialog(this, "Lưu thất bại!");
                 System.out.println("---Insert Phieu Nhap Fail ----");
             }
         });
@@ -450,7 +462,6 @@ public final class panelTaoPN extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void tablePhieuNhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePhieuNhapMouseClicked
-
 
     }//GEN-LAST:event_tablePhieuNhapMouseClicked
 

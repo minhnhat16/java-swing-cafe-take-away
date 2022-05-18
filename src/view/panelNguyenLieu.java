@@ -185,6 +185,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         jPanel33.add(jLabel15, gridBagConstraints);
 
+        txtMaNL.setEditable(false);
         txtMaNL.setMinimumSize(new java.awt.Dimension(100, 19));
         txtMaNL.setPreferredSize(new java.awt.Dimension(200, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -363,9 +364,8 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
                 dtm.setRowCount(0);
                  try{
              //kiểm tra diệu diện khác rỗng, mã nguyen liẹu trùng
-                if (Dao_NguyenLieu.luuNguyenLieu(Ma_Nguyen_Lieu,Ten_NL, DVT )!=0 ){
+                if (Dao_NguyenLieu.luuNguyenLieu(Ten_NL, DVT )!=0 ){
                     System.out.println("---Lưu thành công vào CSDL--");
-                    
                     txtMaNL.setText("");
                     txtTenNL.setText("");
                     txtDVT.setText("");
@@ -384,7 +384,24 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
     private void cbbtimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbtimkiemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbbtimkiemActionPerformed
-
+    /**private int isTenNLValid() {
+        String TenNL = txtTenNL.getText().trim();
+        if (!Valid.isTextValid(TenNL, Regex.W)) {
+            return -1;
+        }else {
+            return 1;
+        }
+    }
+    private boolean isAllValid() {
+    if (isTenNLValid() == 1) {
+            return true;
+    }else if (isTenNLValid() == -1) {
+            JOptionPane.showMessageDialog(this, "Tên nguyên liệu chỉ chứa a-zA-Z");
+            return false;
+    } else {
+            return true;
+            }
+    }*/
     private void ChinhsuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChinhsuaActionPerformed
         String Ma_Nguyen_Lieu= txtMaNL.getText().trim();
         String Ten_NL = txtTenNL.getText().trim();
