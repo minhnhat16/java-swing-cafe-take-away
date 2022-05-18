@@ -67,7 +67,7 @@ public class panelCTTD extends javax.swing.JPanel {
     private void layDSCTTD(List<CTTD> list) {
         dtm = (DefaultTableModel) tableCTTD.getModel();
         dtm.setRowCount(0);
-        for (CTTD ct : list) {
+        list.forEach(ct -> {
             dtm.addRow(new Object[]{
                 Dao_ThucDon.layThucDon_Ma(ct.getMaTD()).getTen(),
                 Dao_NguyenLieu.layNL(ct.getMaNL()).getTenNL(),
@@ -75,7 +75,7 @@ public class panelCTTD extends javax.swing.JPanel {
                 ct.getSoLuongCan()
             });
 //            System.out.println(dao_ThucDon.layThucDon_Ma(ct.getMaTD()).getTen());
-        }
+        });
     }
 
     public static void loadComboBoxQuay(List<NguyenLieu> list, JComboBox cbb) {
@@ -224,6 +224,7 @@ public class panelCTTD extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         jPanel79.add(cbbTenTD, gridBagConstraints);
 
+        cbbNguyenLieu.setMaximumRowCount(15);
         cbbNguyenLieu.setPreferredSize(new java.awt.Dimension(200, 28));
         cbbNguyenLieu.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
