@@ -109,7 +109,7 @@ public class formDoiMatKhau extends javax.swing.JFrame {
         });
         jPanel2.add(buttonThoat);
 
-        jLabel1.setText("Mật khẩu tối thiếu 6 kí tự và tối đa 10 kí tự");
+        jLabel1.setText("Mật khẩu tối thiếu 6 kí tự và tối đa 32 kí tự");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
