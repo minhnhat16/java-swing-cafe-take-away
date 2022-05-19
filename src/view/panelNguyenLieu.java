@@ -153,10 +153,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
                 ChinhsuaActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
-        jPanel32.add(jButton16, gridBagConstraints);
+        jPanel32.add(jButton16, new java.awt.GridBagConstraints());
 
         Them.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/floppy-disk-16.png"))); // NOI18N
         Them.setText("Thêm");
@@ -167,6 +164,22 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
             }
         });
         jPanel32.add(Them, new java.awt.GridBagConstraints());
+
+        buttonResetNL.setForeground(new java.awt.Color(0, 102, 204));
+        buttonResetNL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/refresh-16.png"))); // NOI18N
+        buttonResetNL.setText("Mới");
+        buttonResetNL.setPreferredSize(new java.awt.Dimension(110, 35));
+        buttonResetNL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonResetNLMouseClicked(evt);
+            }
+        });
+        buttonResetNL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                buttonResetNLKeyPressed(evt);
+            }
+        });
+        jPanel32.add(buttonResetNL, new java.awt.GridBagConstraints());
 
         jPanel31.add(jPanel32, java.awt.BorderLayout.CENTER);
 
