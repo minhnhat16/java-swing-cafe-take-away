@@ -182,7 +182,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u t&#x1ed1;i thi&#x1ebf;u 6 k&#xed; t&#x1ef1; v&#xe0; t&#x1ed1;i &#x111;a 32 k&#xed; t&#x1ef1;"/>
+        <Property name="text" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u t&#x1ed1;i thi&#x1ebf;u 4 k&#xed; t&#x1ef1; v&#xe0; t&#x1ed1;i &#x111;a 30 k&#xed; t&#x1ef1;"/>
       </Properties>
     </Component>
   </SubComponents>
