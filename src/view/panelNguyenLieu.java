@@ -7,9 +7,11 @@ package view;
 
 import dao.Dao_NguyenLieu;
 import java.awt.Font;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import model.NguyenLieu;
+import java.awt.event.MouseEvent;
 
 /**
  *
@@ -79,6 +81,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         Them = new javax.swing.JButton();
+        buttonResetNL = new javax.swing.JButton();
         jPanel33 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         txtMaNL = new javax.swing.JTextField();
@@ -140,9 +143,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
                 DeleteActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        jPanel32.add(jButton15, gridBagConstraints);
+        jPanel32.add(jButton15, new java.awt.GridBagConstraints());
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/edit-info-16.png"))); // NOI18N
         jButton16.setText("Chỉnh Sửa");
@@ -166,6 +167,22 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
             }
         });
         jPanel32.add(Them, new java.awt.GridBagConstraints());
+
+        buttonResetNL.setForeground(new java.awt.Color(0, 102, 204));
+        buttonResetNL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/refresh-16.png"))); // NOI18N
+        buttonResetNL.setText("Mới");
+        buttonResetNL.setPreferredSize(new java.awt.Dimension(80, 40));
+        buttonResetNL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonResetNLMouseClicked(evt);
+            }
+        });
+        buttonResetNL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                buttonResetNLKeyPressed(evt);
+            }
+        });
+        jPanel32.add(buttonResetNL, new java.awt.GridBagConstraints());
 
         jPanel31.add(jPanel32, java.awt.BorderLayout.CENTER);
 
@@ -338,6 +355,11 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
                 tableNguyenLieuMouseClicked(evt);
             }
         });
+        tableNguyenLieu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tableNguyenLieuKeyPressed(evt);
+            }
+        });
         jScrollPane4.setViewportView(tableNguyenLieu);
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
@@ -483,10 +505,34 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         this.showDS();
     }//GEN-LAST:event_btnTimkiemActionPerformed
 
+    private void buttonResetNLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonResetNLMouseClicked
+        // TODO add your handling code here:
+        if (evt.getButton() == MouseEvent.BUTTON1) {
+            reset();
+        }
+    }//GEN-LAST:event_buttonResetNLMouseClicked
+
+    private void buttonResetNLKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buttonResetNLKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonResetNLKeyPressed
+
+    private void tableNguyenLieuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableNguyenLieuKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            reset();
+        }
+    }//GEN-LAST:event_tableNguyenLieuKeyPressed
+private void reset() {
+        txtMaNL.setText(" ");
+        txtTenNL.setText(" ");
+        txtDVT.setText(" ");
+        tableNguyenLieu.clearSelection();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Them;
     private javax.swing.JButton btnTimkiem;
+    private javax.swing.JButton buttonResetNL;
     private javax.swing.JComboBox<String> cbbtimkiem;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
@@ -509,4 +555,5 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
     private javax.swing.JTextField txtMaNL;
     private javax.swing.JTextField txtTenNL;
     // End of variables declaration//GEN-END:variables
+   
 }
