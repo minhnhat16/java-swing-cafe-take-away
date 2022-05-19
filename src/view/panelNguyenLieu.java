@@ -81,6 +81,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         Them = new javax.swing.JButton();
+        buttonResetNL = new javax.swing.JButton();
         jPanel33 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         txtMaNL = new javax.swing.JTextField();
@@ -88,7 +89,6 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         txtDVT = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         txtTenNL = new javax.swing.JTextField();
-        buttonResetNL = new javax.swing.JButton();
         jPanel26 = new javax.swing.JPanel();
         jPanel28 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -117,14 +117,14 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -261,27 +261,6 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         jPanel31.add(jPanel33, java.awt.BorderLayout.PAGE_START);
 
         jPanel25.add(jPanel31, java.awt.BorderLayout.CENTER);
-
-        buttonResetNL.setForeground(new java.awt.Color(255, 255, 255));
-        buttonResetNL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/refresh-16.png"))); // NOI18N
-        buttonResetNL.setText("Mới");
-        buttonResetNL.setPreferredSize(new java.awt.Dimension(110, 35));
-        buttonResetNL.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonResetNLMouseClicked(evt);
-            }
-        });
-        buttonResetNL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonResetNLActionPerformed(evt);
-            }
-        });
-        buttonResetNL.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                buttonResetNLKeyPressed(evt);
-            }
-        });
-        jPanel25.add(buttonResetNL, java.awt.BorderLayout.PAGE_END);
 
         add(jPanel25);
 
@@ -540,10 +519,6 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
             reset();
         }
     }//GEN-LAST:event_tableNguyenLieuKeyPressed
-
-    private void buttonResetNLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonResetNLActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonResetNLActionPerformed
 private void reset() {
         txtMaNL.setText(" ");
         txtTenNL.setText(" ");

@@ -282,7 +282,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
 
         lb_summoney.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lb_summoney.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lb_summoney.setText("2,000,000");
+        lb_summoney.setText("0");
         lb_summoney.setPreferredSize(new java.awt.Dimension(100, 20));
         jPanel60.add(lb_summoney);
 
