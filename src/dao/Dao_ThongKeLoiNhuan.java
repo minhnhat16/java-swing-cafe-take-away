@@ -33,26 +33,27 @@ public class Dao_ThongKeLoiNhuan {
         //don't have condition date
         if(start==null&&end==null){
         sqldoanhthu = "select HOA_DON.MA_QUAY,HOA_DON.NGAY_TAO,SUM(CT_HD.SO_LUONG_LY*CT_HD.GIA_TIEN) as doanhthu from CT_HD,HOA_DON WHERE HOA_DON.MA_HD=CT_HD.MA_HD GROUP BY HOA_DON.MA_QUAY,HOA_DON.NGAY_TAO";
-        sqlchiphi = "select PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP,SUM(CT_PN.SO_LUONG_NL*CT_PN.GIA_TIEN) as chiphi from CT_PN,PHIEU_NHAP WHERE PHIEU_NHAP.MA_PN=CT_PN.MA_PN GROUP BY PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP";
-        sqlloinhuan="select dt.MA_QUAY,dt.NGAY_TAO,(dt.doanhthu-cp.chiphi) as loinhuan from ("+sqldoanhthu+") as dt, ("+sqlchiphi+") as cp where dt.MA_QUAY=cp.MA_QUAY and dt.NGAY_TAO=cp.NGAY_NHAP";
+        sqlchiphi = "select sum(cpt.chiphi) as chiphi,cpt.MA_QUAY from( select PHIEU_NHAP.MA_QUAY ,PHIEU_NHAP.NGAY_NHAP,SUM(CT_PN.SO_LUONG_NL*CT_PN.GIA_TIEN) as chiphi from CT_PN,PHIEU_NHAP WHERE PHIEU_NHAP.MA_PN=CT_PN.MA_PN GROUP BY PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP )as cpt group by cpt.MA_QUAY";
+        sqlloinhuan="select dt.MA_QUAY,dt.NGAY_TAO,(dt.doanhthu-cp.chiphi) as loinhuan from ("+sqldoanhthu+") as dt, ("+sqlchiphi+") as cp where dt.MA_QUAY=cp.MA_QUAY ";
+        
         }
         else if(start == null){
         //don't have start date
         sqldoanhthu = "select HOA_DON.MA_QUAY,HOA_DON.NGAY_TAO,SUM(CT_HD.SO_LUONG_LY*CT_HD.GIA_TIEN) as doanhthu from CT_HD,HOA_DON WHERE HOA_DON.NGAY_TAO <='"+String.valueOf(end)+"' and HOA_DON.MA_HD=CT_HD.MA_HD GROUP BY HOA_DON.MA_QUAY,HOA_DON.NGAY_TAO";
-        sqlchiphi = "select PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP,SUM(CT_PN.SO_LUONG_NL*CT_PN.GIA_TIEN) as chiphi from CT_PN,PHIEU_NHAP WHERE PHIEU_NHAP.NGAY_NHAP<='"+String.valueOf(end)+"' and PHIEU_NHAP.MA_PN=CT_PN.MA_PN GROUP BY PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP ";
-        sqlloinhuan="select dt.MA_QUAY,dt.NGAY_TAO,(dt.doanhthu-cp.chiphi) as loinhuan from ("+sqldoanhthu+") as dt, ("+sqlchiphi+") as cp where dt.MA_QUAY=cp.MA_QUAY and dt.NGAY_TAO=cp.NGAY_NHAP";
+        sqlchiphi = "select sum(cpt.chiphi) as chiphi,cpt.MA_QUAY from( select PHIEU_NHAP.MA_QUAY ,PHIEU_NHAP.NGAY_NHAP,SUM(CT_PN.SO_LUONG_NL*CT_PN.GIA_TIEN) as chiphi from CT_PN,PHIEU_NHAP WHERE PHIEU_NHAP.NGAY_NHAP<='"+String.valueOf(end)+"' and PHIEU_NHAP.MA_PN=CT_PN.MA_PN GROUP BY PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP )as cpt group by cpt.MA_QUAY";
+        sqlloinhuan="select dt.MA_QUAY,dt.NGAY_TAO,(dt.doanhthu-cp.chiphi) as loinhuan from ("+sqldoanhthu+") as dt, ("+sqlchiphi+") as cp where dt.MA_QUAY=cp.MA_QUAY";
        
         }else if(end == null){
             //don't have end date
         sqldoanhthu = "select HOA_DON.MA_QUAY,HOA_DON.NGAY_TAO,SUM(CT_HD.SO_LUONG_LY*CT_HD.GIA_TIEN) as doanhthu from CT_HD,HOA_DON WHERE HOA_DON.NGAY_TAO >='"+String.valueOf(start)+"' and HOA_DON.MA_HD=CT_HD.MA_HD GROUP BY HOA_DON.MA_QUAY,HOA_DON.NGAY_TAO";
-        sqlchiphi = "select PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP,SUM(CT_PN.SO_LUONG_NL*CT_PN.GIA_TIEN) as chiphi from CT_PN,PHIEU_NHAP WHERE PHIEU_NHAP.NGAY_NHAP>='"+String.valueOf(start)+"' and PHIEU_NHAP.MA_PN=CT_PN.MA_PN GROUP BY PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP ";
-        sqlloinhuan="select dt.MA_QUAY,dt.NGAY_TAO,(dt.doanhthu-cp.chiphi) as loinhuan from ("+sqldoanhthu+") as dt, ("+sqlchiphi+") as cp where dt.MA_QUAY=cp.MA_QUAY and dt.NGAY_TAO=cp.NGAY_NHAP";
+        sqlchiphi = "select sum(cpt.chiphi) as chiphi,cpt.MA_QUAY from( select PHIEU_NHAP.MA_QUAY  ,PHIEU_NHAP.NGAY_NHAP,SUM(CT_PN.SO_LUONG_NL*CT_PN.GIA_TIEN) as chiphi from CT_PN,PHIEU_NHAP WHERE PHIEU_NHAP.NGAY_NHAP>='"+String.valueOf(start)+"' and PHIEU_NHAP.MA_PN=CT_PN.MA_PN GROUP BY PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP )as cpt group by cpt.MA_QUAY";
+        sqlloinhuan="select dt.MA_QUAY,dt.NGAY_TAO,(dt.doanhthu-cp.chiphi) as loinhuan from ("+sqldoanhthu+") as dt, ("+sqlchiphi+") as cp where dt.MA_QUAY=cp.MA_QUAY ";
        
         }else{
         // condition date between start and end
         sqldoanhthu = "select HOA_DON.MA_QUAY,HOA_DON.NGAY_TAO,SUM(CT_HD.SO_LUONG_LY*CT_HD.GIA_TIEN) as doanhthu from CT_HD,HOA_DON WHERE (HOA_DON.NGAY_TAO BETWEEN '"+String.valueOf(start)+"' and '"+String.valueOf(end)+"') and HOA_DON.MA_HD=CT_HD.MA_HD GROUP BY HOA_DON.MA_QUAY,HOA_DON.NGAY_TAO";
-        sqlchiphi = "select PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP,SUM(CT_PN.SO_LUONG_NL*CT_PN.GIA_TIEN) as chiphi from CT_PN,PHIEU_NHAP WHERE (PHIEU_NHAP.NGAY_NHAP BETWEEN '"+String.valueOf(start)+"' and '"+String.valueOf(end)+"') and PHIEU_NHAP.MA_PN=CT_PN.MA_PN GROUP BY PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP ";
-        sqlloinhuan="select dt.MA_QUAY,dt.NGAY_TAO,(dt.doanhthu-cp.chiphi) as loinhuan from ("+sqldoanhthu+") as dt, ("+sqlchiphi+") as cp where dt.MA_QUAY=cp.MA_QUAY and dt.NGAY_TAO=cp.NGAY_NHAP";
+        sqlchiphi = "select sum(cpt.chiphi) as chiphi,cpt.MA_QUAY from( select PHIEU_NHAP.MA_QUAY  ,PHIEU_NHAP.NGAY_NHAP,SUM(CT_PN.SO_LUONG_NL*CT_PN.GIA_TIEN) as chiphi from CT_PN,PHIEU_NHAP WHERE (PHIEU_NHAP.NGAY_NHAP BETWEEN '"+String.valueOf(start)+"' and '"+String.valueOf(end)+"') and PHIEU_NHAP.MA_PN=CT_PN.MA_PN GROUP BY PHIEU_NHAP.MA_QUAY,PHIEU_NHAP.NGAY_NHAP )as cpt group by cpt.MA_QUAY";
+        sqlloinhuan="select dt.MA_QUAY,dt.NGAY_TAO,(dt.doanhthu-cp.chiphi) as loinhuan from ("+sqldoanhthu+") as dt, ("+sqlchiphi+") as cp where dt.MA_QUAY=cp.MA_QUAY ";
         
         }
       
@@ -60,7 +61,12 @@ public class Dao_ThongKeLoiNhuan {
         //add to list
         Statement statement;
         try {
-            System.out.println(sqlloinhuan);
+             System.out.println("--- doanh thu---");
+            System.out.println(sqldoanhthu);
+             System.out.println("--- chi phi---");
+            System.out.println(sqlchiphi);
+            System.out.println("---LOI NHUAN---");
+              System.out.println(sqlloinhuan);
             statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sqlloinhuan);
             System.out.println("---200-OK-Doanh--Thu---- ");

@@ -446,6 +446,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
         lsThem.add(new TaoPN(maphieunhap, posNL.getMaNL()+"", TenNguyenLieu, posNL.getDonViTinh(), SoLuong, GiaTien, MA_NV, MA_QUAY, this.getDateLocal()));
         txt_MaPhieuNhap.setEditable(false);
         comboxQuay.setEnabled(false);
+        tablePhieuNhap.setEnabled(false);
         //Them tiep row trong table tao PN
         this.sumMoney = this.sumMoney + SoLuong * GiaTien;
         dtm.addRow(new Object[]{
@@ -526,6 +527,10 @@ public final class panelTaoPN extends javax.swing.JPanel {
             txt_MaPhieuNhap.setText(" ");
             txtSoLuong.setText(" ");
             txtGiaTien.setText(" ");
+            lsThem.removeAll(lsThem);
+            dtm.setRowCount(0);
+            this.sumMoney = 0;
+            lb_summoney.setText(String.valueOf(this.sumMoney));
             //tableNguyenLieu.clearSelection();
         }
     private void buttonResetNLKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buttonResetNLKeyPressed
