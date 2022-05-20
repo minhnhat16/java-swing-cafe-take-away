@@ -10,10 +10,14 @@ import dao.Dao_NguyenLieu;
 import dao.Dao_PhieuNhap;
 import dao.Dao_QuayCafe;
 import java.awt.Font;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.NguyenLieu;
@@ -29,7 +33,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
     private static DefaultTableModel dtm;
     private int sumMoney = 0; //tong tien
     private List<NguyenLieu> lsnguyenlieu;//lay danh sach nguyen lieu (ComboxNguyenLieu)
-    private final List<TaoPN> lsThem;//Luu danh sach PN chua luu vao DB
+    private List<TaoPN> lsThem;//Luu danh sach PN chua luu vao DB
     private Boolean p;
     private int SoLuong, GiaTien;
     private String date ;
@@ -74,6 +78,11 @@ public final class panelTaoPN extends javax.swing.JPanel {
     public static String setDate(String ngay) {
         String[] a = ngay.split("/");
         return a[2] + "-" + a[1] + "-" + a[0];
+    }
+    //lấy db về
+    public static String getDate(String ngay) {
+        String[] a = ngay.split("-");
+        return a[2] + "/" + a[1] + "/" + a[0];
     }
 
     @SuppressWarnings("unchecked")
@@ -337,20 +346,16 @@ public final class panelTaoPN extends javax.swing.JPanel {
 
     }
 
-
-
     private String getDateLocal() {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            //  Date now;
-            String dateString = setDate(LocalDate.now().toString());
+            Date now;
+            String dateString = getDate(LocalDate.now().toString());
             System.out.println(LocalDate.now().toString());
-
-            return dateString;
-            // now=sdf.parse(dateString);
-//            labelNgayLap.setText(sdf.format(now));
+            now=sdf.parse(dateString);
+            lbNgayLap.setText(sdf.format(now));
         } catch (Exception ex) {
-            //Logger.getLogger(panelLapHD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(panelLapHD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -375,8 +380,8 @@ public final class panelTaoPN extends javax.swing.JPanel {
                 if (item.getMA_PHIEU_NHAP().toLowerCase().trim().equals(MAPN.toLowerCase().trim())) {
                     p = true;
                 }
-
-            });
+            }
+            );
         }
         return p;
     }
@@ -419,7 +424,6 @@ public final class panelTaoPN extends javax.swing.JPanel {
             SoLuong,
             GiaTien
         });
-        this.setInputEmpty();
         lb_summoney.setText(String.valueOf(this.sumMoney));
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -442,7 +446,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         //btn save
          this.lsThem.forEach(item -> {
-            date = setDate(item.getNGAY_NHAP().trim());
+            String date = setDate(lbNgayLap.getText().trim());
             if (Dao_PhieuNhap.themPhieuNhap(item.getMA_PHIEU_NHAP(), date, item.getMA_NV(), item.getMA_QUAY()) != 0) {
                 Dao_CTPN.themCTPN(item.getMA_PHIEU_NHAP(), item.getMA_NGUYEN_LIEU(), item.getSO_LUONG(), item.getPRICE());
                 JOptionPane.showMessageDialog(this, "Lưu thành công phiếu nhập!");

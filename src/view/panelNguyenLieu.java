@@ -12,6 +12,7 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import model.NguyenLieu;
 import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -385,6 +386,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
              //kiểm tra diệu diện khác rỗng, mã nguyen liẹu trùng
                 if (Dao_NguyenLieu.luuNguyenLieu(Ten_NL, DVT )!=0 ){
                     System.out.println("---Lưu thành công vào CSDL--");
+                    JOptionPane.showMessageDialog(this, "Thêm thành công!");
                     txtMaNL.setText("");
                     txtTenNL.setText("");
                     txtDVT.setText("");
@@ -452,6 +454,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
             NL.setTenNL(Ten_NL);
             NL.setDonViTinh(DVT);
             this.showDS();
+            JOptionPane.showMessageDialog(this, "Sửa thành công!");
             
         }
     }//GEN-LAST:event_ChinhsuaActionPerformed
@@ -492,6 +495,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
             txtMaNL.setText("");
             txtTenNL.setText("");
             txtDVT.setText("");
+            JOptionPane.showMessageDialog(this, "Đã xóa nguyên liệu!");
        }
     }//GEN-LAST:event_DeleteActionPerformed
 
