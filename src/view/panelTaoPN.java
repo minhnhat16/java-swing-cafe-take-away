@@ -10,10 +10,15 @@ import dao.Dao_NguyenLieu;
 import dao.Dao_PhieuNhap;
 import dao.Dao_QuayCafe;
 import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.NguyenLieu;
@@ -29,7 +34,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
     private static DefaultTableModel dtm;
     private int sumMoney = 0; //tong tien
     private List<NguyenLieu> lsnguyenlieu;//lay danh sach nguyen lieu (ComboxNguyenLieu)
-    private final List<TaoPN> lsThem;//Luu danh sach PN chua luu vao DB
+    private List<TaoPN> lsThem;//Luu danh sach PN chua luu vao DB
     private Boolean p;
     private int SoLuong, GiaTien;
     private String date ;
@@ -75,6 +80,11 @@ public final class panelTaoPN extends javax.swing.JPanel {
         String[] a = ngay.split("/");
         return a[2] + "-" + a[1] + "-" + a[0];
     }
+    //lấy db về
+    public static String getDate(String ngay) {
+        String[] a = ngay.split("-");
+        return a[2] + "/" + a[1] + "/" + a[0];
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -86,6 +96,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
         btnSave = new javax.swing.JButton();
         btnThem = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        buttonResetNL = new javax.swing.JButton();
         jPanel46 = new javax.swing.JPanel();
         jPanel55 = new javax.swing.JPanel();
         jPanel56 = new javax.swing.JPanel();
@@ -141,17 +152,42 @@ public final class panelTaoPN extends javax.swing.JPanel {
             }
         });
 
+        buttonResetNL.setForeground(new java.awt.Color(0, 102, 204));
+        buttonResetNL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/refresh-16.png"))); // NOI18N
+        buttonResetNL.setText("Mới");
+        buttonResetNL.setPreferredSize(new java.awt.Dimension(110, 35));
+        buttonResetNL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonResetNLMouseClicked(evt);
+            }
+        });
+        buttonResetNL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonResetNLActionPerformed(evt);
+            }
+        });
+        buttonResetNL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                buttonResetNLKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
         jPanel45.setLayout(jPanel45Layout);
         jPanel45Layout.setHorizontalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
-                .addGap(0, 7, Short.MAX_VALUE)
-                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(comboxQuay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnThem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel45Layout.createSequentialGroup()
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
+                        .addGap(0, 7, Short.MAX_VALUE)
+                        .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(comboxQuay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnThem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel45Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(buttonResetNL, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel45Layout.setVerticalGroup(
@@ -159,7 +195,9 @@ public final class panelTaoPN extends javax.swing.JPanel {
             .addGroup(jPanel45Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(comboxQuay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addComponent(buttonResetNL, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnDelete)
                 .addGap(18, 18, 18)
                 .addComponent(btnThem)
@@ -317,7 +355,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
         jPanel59.setLayout(jPanel59Layout);
         jPanel59Layout.setHorizontalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
+            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
         );
         jPanel59Layout.setVerticalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,20 +375,16 @@ public final class panelTaoPN extends javax.swing.JPanel {
 
     }
 
-
-
     private String getDateLocal() {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            //  Date now;
-            String dateString = setDate(LocalDate.now().toString());
+            Date now;
+            String dateString = getDate(LocalDate.now().toString());
             System.out.println(LocalDate.now().toString());
-
-            return dateString;
-            // now=sdf.parse(dateString);
-//            labelNgayLap.setText(sdf.format(now));
+            now=sdf.parse(dateString);
+            lbNgayLap.setText(sdf.format(now));
         } catch (Exception ex) {
-            //Logger.getLogger(panelLapHD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(panelLapHD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -375,8 +409,8 @@ public final class panelTaoPN extends javax.swing.JPanel {
                 if (item.getMA_PHIEU_NHAP().toLowerCase().trim().equals(MAPN.toLowerCase().trim())) {
                     p = true;
                 }
-
-            });
+            }
+            );
         }
         return p;
     }
@@ -410,6 +444,8 @@ public final class panelTaoPN extends javax.swing.JPanel {
         NguyenLieu posNL = lsnguyenlieu.get(posSelectedNguyenLieu);
 
         lsThem.add(new TaoPN(maphieunhap, posNL.getMaNL()+"", TenNguyenLieu, posNL.getDonViTinh(), SoLuong, GiaTien, MA_NV, MA_QUAY, this.getDateLocal()));
+        txt_MaPhieuNhap.setEditable(false);
+        comboxQuay.setEnabled(false);
         //Them tiep row trong table tao PN
         this.sumMoney = this.sumMoney + SoLuong * GiaTien;
         dtm.addRow(new Object[]{
@@ -419,7 +455,6 @@ public final class panelTaoPN extends javax.swing.JPanel {
             SoLuong,
             GiaTien
         });
-        this.setInputEmpty();
         lb_summoney.setText(String.valueOf(this.sumMoney));
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -442,7 +477,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         //btn save
          this.lsThem.forEach(item -> {
-            date = setDate(item.getNGAY_NHAP().trim());
+            String date = setDate(lbNgayLap.getText().trim());
             if (Dao_PhieuNhap.themPhieuNhap(item.getMA_PHIEU_NHAP(), date, item.getMA_NV(), item.getMA_QUAY()) != 0) {
                 Dao_CTPN.themCTPN(item.getMA_PHIEU_NHAP(), item.getMA_NGUYEN_LIEU(), item.getSO_LUONG(), item.getPRICE());
                 JOptionPane.showMessageDialog(this, "Lưu thành công phiếu nhập!");
@@ -478,12 +513,36 @@ public final class panelTaoPN extends javax.swing.JPanel {
         this.showDSThem();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
+    private void buttonResetNLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonResetNLMouseClicked
+        // TODO add your handling code here:
+        if (evt.getButton() == MouseEvent.BUTTON1) {
+            reset();
+            txt_MaPhieuNhap.setEditable(true);
+            comboxQuay.setEnabled(true);
+            
+        }
+    }//GEN-LAST:event_buttonResetNLMouseClicked
+    private void reset() {
+            txt_MaPhieuNhap.setText(" ");
+            txtSoLuong.setText(" ");
+            txtGiaTien.setText(" ");
+            //tableNguyenLieu.clearSelection();
+        }
+    private void buttonResetNLKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buttonResetNLKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonResetNLKeyPressed
+
+    private void buttonResetNLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonResetNLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonResetNLActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboxNguyenLieu;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnThem;
+    private javax.swing.JButton buttonResetNL;
     private javax.swing.JComboBox<String> comboxQuay;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
