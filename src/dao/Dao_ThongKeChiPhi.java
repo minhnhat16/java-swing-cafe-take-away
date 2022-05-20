@@ -55,7 +55,7 @@ public class Dao_ThongKeChiPhi {
                 list.add(new ThongKeChiPhi(rs.getString(1),rs.getString(2),rs.getString(3)));
                
             }
-            return list;
+            return list;//từ từ chia nhìn kkipj
         } catch (SQLException ex) {
             Logger.getLogger(panelDSNV.class.getName()).log(Level.SEVERE, null, ex);
         }
