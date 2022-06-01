@@ -102,7 +102,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(400, 300));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.X_AXIS));
 
-        jPanel25.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thêm Nguyên Liệu", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 0, 204))); // NOI18N
+        jPanel25.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Thêm Nguyên Liệu", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 0, 204))); // NOI18N
         jPanel25.setMinimumSize(new java.awt.Dimension(420, 125));
         jPanel25.setPreferredSize(new java.awt.Dimension(420, 313));
         jPanel25.setLayout(new java.awt.BorderLayout());
@@ -118,7 +118,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel30Layout.setVerticalGroup(
@@ -190,7 +190,8 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
 
         jLabel15.setForeground(new java.awt.Color(0, 102, 204));
         jLabel15.setText("Mã Nguyên Liệu");
-        jLabel15.setPreferredSize(new java.awt.Dimension(100, 25));
+        jLabel15.setMinimumSize(new java.awt.Dimension(100, 28));
+        jLabel15.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -201,8 +202,8 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         jPanel33.add(jLabel15, gridBagConstraints);
 
         txtMaNL.setEditable(false);
-        txtMaNL.setMinimumSize(new java.awt.Dimension(100, 19));
-        txtMaNL.setPreferredSize(new java.awt.Dimension(200, 25));
+        txtMaNL.setMinimumSize(new java.awt.Dimension(100, 28));
+        txtMaNL.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -215,7 +216,8 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
 
         jLabel16.setForeground(new java.awt.Color(0, 102, 204));
         jLabel16.setText("Đơn Vị Tính");
-        jLabel16.setPreferredSize(new java.awt.Dimension(100, 25));
+        jLabel16.setMinimumSize(new java.awt.Dimension(100, 28));
+        jLabel16.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -225,8 +227,8 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         jPanel33.add(jLabel16, gridBagConstraints);
 
-        txtDVT.setMinimumSize(new java.awt.Dimension(100, 19));
-        txtDVT.setPreferredSize(new java.awt.Dimension(200, 25));
+        txtDVT.setMinimumSize(new java.awt.Dimension(100, 28));
+        txtDVT.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -238,7 +240,8 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
 
         jLabel17.setForeground(new java.awt.Color(0, 102, 204));
         jLabel17.setText("Tên Nguyên Liệu");
-        jLabel17.setPreferredSize(new java.awt.Dimension(100, 25));
+        jLabel17.setMinimumSize(new java.awt.Dimension(100, 28));
+        jLabel17.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -248,8 +251,8 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         jPanel33.add(jLabel17, gridBagConstraints);
 
-        txtTenNL.setMinimumSize(new java.awt.Dimension(100, 19));
-        txtTenNL.setPreferredSize(new java.awt.Dimension(200, 25));
+        txtTenNL.setMinimumSize(new java.awt.Dimension(100, 28));
+        txtTenNL.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -265,7 +268,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
 
         add(jPanel25);
 
-        jPanel26.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông Tin Nguyên Liệu", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 0, 255))); // NOI18N
+        jPanel26.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Thông Tin Nguyên Liệu", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 0, 255))); // NOI18N
         jPanel26.setLayout(new java.awt.BorderLayout());
 
         jPanel28.setPreferredSize(new java.awt.Dimension(394, 70));
@@ -368,7 +371,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
         );
 
         jPanel26.add(jPanel29, java.awt.BorderLayout.CENTER);

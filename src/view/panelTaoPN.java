@@ -122,8 +122,6 @@ public final class panelTaoPN extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel45.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         comboxQuay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quầy 1" }));
 
         btnSave.setForeground(new java.awt.Color(0, 102, 204));
@@ -195,7 +193,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
             .addGroup(jPanel45Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(comboxQuay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
                 .addComponent(buttonResetNL, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnDelete)
@@ -214,7 +212,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
         jPanel55.setPreferredSize(new java.awt.Dimension(690, 120));
         jPanel55.setLayout(new javax.swing.BoxLayout(jPanel55, javax.swing.BoxLayout.X_AXIS));
 
-        jPanel56.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phiếu Nhập", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 255))); // NOI18N
+        jPanel56.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Phiếu Nhập", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 255))); // NOI18N
         jPanel56.setPreferredSize(new java.awt.Dimension(300, 190));
         jPanel56.setLayout(new java.awt.GridBagLayout());
 
@@ -251,7 +249,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
 
         jPanel55.add(jPanel56);
 
-        jPanel57.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chi Tiết", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 51, 204))); // NOI18N
+        jPanel57.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Chi Tiết", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 51, 204))); // NOI18N
         jPanel57.setPreferredSize(new java.awt.Dimension(330, 190));
         jPanel57.setLayout(new java.awt.GridBagLayout());
 
@@ -355,7 +353,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
         jPanel59.setLayout(jPanel59Layout);
         jPanel59Layout.setHorizontalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
         );
         jPanel59Layout.setVerticalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

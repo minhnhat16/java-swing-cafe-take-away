@@ -147,8 +147,6 @@ public class panelLapHD extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel37.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         cbbQuay.setForeground(new java.awt.Color(0, 102, 204));
         cbbQuay.setMinimumSize(new java.awt.Dimension(63, 25));
         cbbQuay.setPreferredSize(new java.awt.Dimension(63, 30));
@@ -230,7 +228,7 @@ public class panelLapHD extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbbQuay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addComponent(btnHuy)
                 .addGap(18, 18, 18)
                 .addComponent(btnSua)
@@ -251,7 +249,7 @@ public class panelLapHD extends javax.swing.JPanel {
         jPanel39.setPreferredSize(new java.awt.Dimension(690, 120));
         jPanel39.setLayout(new javax.swing.BoxLayout(jPanel39, javax.swing.BoxLayout.X_AXIS));
 
-        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hóa Đơn", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 0, 255))); // NOI18N
+        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Hóa Đơn", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 0, 255))); // NOI18N
         jPanel41.setPreferredSize(new java.awt.Dimension(300, 190));
         jPanel41.setLayout(new java.awt.GridBagLayout());
 
@@ -288,7 +286,7 @@ public class panelLapHD extends javax.swing.JPanel {
 
         jPanel39.add(jPanel41);
 
-        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chi Tiết", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 51, 204))); // NOI18N
+        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Chi Tiết", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 51, 204))); // NOI18N
         jPanel42.setPreferredSize(new java.awt.Dimension(330, 190));
         jPanel42.setLayout(new java.awt.GridBagLayout());
 
@@ -447,7 +445,7 @@ public class panelLapHD extends javax.swing.JPanel {
         jPanel62.setLayout(jPanel62Layout);
         jPanel62Layout.setHorizontalGroup(
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
+            .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE)
         );
         jPanel62Layout.setVerticalGroup(
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

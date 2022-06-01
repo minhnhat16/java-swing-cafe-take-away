@@ -177,14 +177,12 @@ public class panelCaNV extends javax.swing.JPanel {
 
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
 
-        jPanel20.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel20.setPreferredSize(new java.awt.Dimension(740, 200));
         jPanel20.setLayout(new javax.swing.BoxLayout(jPanel20, javax.swing.BoxLayout.X_AXIS));
 
-        jPanel22.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Xếp Ca Làm", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        jPanel22.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Xếp Ca Làm", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         jPanel22.setLayout(new java.awt.BorderLayout());
 
-        jPanel65.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel65.setPreferredSize(new java.awt.Dimension(303, 80));
         jPanel65.setLayout(new java.awt.GridBagLayout());
 
@@ -224,7 +222,6 @@ public class panelCaNV extends javax.swing.JPanel {
 
         jPanel22.add(jPanel65, java.awt.BorderLayout.PAGE_END);
 
-        jPanel66.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel66.setLayout(new java.awt.GridBagLayout());
 
         jLabel51.setForeground(new java.awt.Color(0, 102, 204));
@@ -300,11 +297,10 @@ public class panelCaNV extends javax.swing.JPanel {
 
         jPanel20.add(jPanel22);
 
-        jPanel23.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ca Làm Việc", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        jPanel23.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Ca Làm Việc", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         jPanel23.setPreferredSize(new java.awt.Dimension(405, 194));
         jPanel23.setLayout(new java.awt.BorderLayout());
 
-        jPanel63.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel63.setPreferredSize(new java.awt.Dimension(415, 70));
         jPanel63.setLayout(new java.awt.GridBagLayout());
 
@@ -381,11 +377,11 @@ public class panelCaNV extends javax.swing.JPanel {
         jPanel64.setLayout(jPanel64Layout);
         jPanel64Layout.setHorizontalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
         );
         jPanel64Layout.setVerticalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
         );
 
         jPanel23.add(jPanel64, java.awt.BorderLayout.CENTER);

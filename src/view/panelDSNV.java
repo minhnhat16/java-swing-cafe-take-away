@@ -89,7 +89,7 @@ public class panelDSNV extends javax.swing.JPanel {
         jPanel7.setPreferredSize(new java.awt.Dimension(812, 100));
         jPanel7.setLayout(new java.awt.BorderLayout());
 
-        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tìm Kiếm Theo Họ Tên Nhân Viên", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Tìm Kiếm Theo Họ Tên Nhân Viên", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         jPanel16.setPreferredSize(new java.awt.Dimension(450, 70));
         jPanel16.setLayout(new java.awt.GridBagLayout());
 
@@ -122,7 +122,7 @@ public class panelDSNV extends javax.swing.JPanel {
 
         jPanel7.add(jPanel16, java.awt.BorderLayout.CENTER);
 
-        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chỉnh Sửa Thông Tin", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Chỉnh Sửa Thông Tin", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         jPanel17.setMinimumSize(new java.awt.Dimension(300, 72));
         jPanel17.setPreferredSize(new java.awt.Dimension(400, 72));
         java.awt.GridBagLayout jPanel17Layout = new java.awt.GridBagLayout();
@@ -339,14 +339,18 @@ public class panelDSNV extends javax.swing.JPanel {
     private void buttonThemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonThemMouseClicked
         // TODO add your handling code here:
         if (evt.getButton() == MouseEvent.BUTTON1) {
-            if (!formThongTinNVOpened) {
-                formThemNV f = new formThemNV();
+            formThemNV f;
+            if (!formThemNVOpened) {
+                f = new formThemNV();
                 f.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                 f.setLocationRelativeTo(null);
                 f.setResizable(false);
                 f.setVisible(true);
                 formThemNVOpened = true; //đã mở
+                System.out.println("form thêm nhân viên mở");
             } else {
+                System.out.println("form thêm nv mở: "+formThemNVOpened);
+                System.out.println("Cửa sổ thêm nhân viên đã được mở!");
                 JOptionPane.showMessageDialog(this, "Cửa sổ thêm nhân viên đã được mở!");
             }
         }

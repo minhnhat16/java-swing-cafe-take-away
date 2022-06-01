@@ -217,8 +217,6 @@ public class formNhanVien extends javax.swing.JFrame {
 
         tabLapHoaDon.setLayout(new java.awt.BorderLayout());
 
-        jPanel37.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         comboMAQUAY.setMinimumSize(new java.awt.Dimension(63, 25));
         comboMAQUAY.setPreferredSize(new java.awt.Dimension(63, 30));
         comboMAQUAY.addActionListener(new java.awt.event.ActionListener() {
@@ -297,7 +295,7 @@ public class formNhanVien extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(comboMAQUAY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addComponent(huyButton)
                 .addGap(18, 18, 18)
                 .addComponent(SuaButton)
@@ -318,8 +316,7 @@ public class formNhanVien extends javax.swing.JFrame {
         jPanel39.setPreferredSize(new java.awt.Dimension(690, 120));
         jPanel39.setLayout(new javax.swing.BoxLayout(jPanel39, javax.swing.BoxLayout.LINE_AXIS));
 
-        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hóa Đơn", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 0, 255))); // NOI18N
-        jPanel41.setMaximumSize(new java.awt.Dimension(32767, 32767));
+        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Hóa Đơn", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 0, 255))); // NOI18N
         jPanel41.setMinimumSize(new java.awt.Dimension(300, 169));
         jPanel41.setPreferredSize(new java.awt.Dimension(300, 190));
         jPanel41.setLayout(new java.awt.GridBagLayout());
@@ -366,8 +363,7 @@ public class formNhanVien extends javax.swing.JFrame {
 
         jPanel39.add(jPanel41);
 
-        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chi Tiết", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 51, 204))); // NOI18N
-        jPanel42.setMaximumSize(new java.awt.Dimension(32767, 32767));
+        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Chi Tiết", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(0, 51, 204))); // NOI18N
         jPanel42.setMinimumSize(new java.awt.Dimension(330, 190));
         jPanel42.setPreferredSize(new java.awt.Dimension(330, 190));
         jPanel42.setLayout(new java.awt.GridBagLayout());
@@ -453,7 +449,7 @@ public class formNhanVien extends javax.swing.JFrame {
             .addGroup(jPanel61Layout.createSequentialGroup()
                 .addGap(324, 324, 324)
                 .addComponent(jLabel46)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addComponent(jLabel47)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -496,7 +492,7 @@ public class formNhanVien extends javax.swing.JFrame {
         jPanel62.setLayout(jPanel62Layout);
         jPanel62Layout.setHorizontalGroup(
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE)
+            .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
         );
         jPanel62Layout.setVerticalGroup(
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

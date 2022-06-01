@@ -126,7 +126,7 @@ public class panelDSTD extends javax.swing.JPanel {
         jPanel4.setPreferredSize(new java.awt.Dimension(400, 80));
         jPanel4.setLayout(new java.awt.BorderLayout());
 
-        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông Tin Thực Đơn", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Thông Tin Thực Đơn", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         jPanel13.setMinimumSize(new java.awt.Dimension(100, 100));
         jPanel13.setPreferredSize(new java.awt.Dimension(400, 80));
         java.awt.GridBagLayout jPanel13Layout = new java.awt.GridBagLayout();
@@ -206,7 +206,7 @@ public class panelDSTD extends javax.swing.JPanel {
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +217,6 @@ public class panelDSTD extends javax.swing.JPanel {
 
         add(jPanel4, java.awt.BorderLayout.CENTER);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
         buttonSuaTD.setForeground(new java.awt.Color(0, 102, 204));

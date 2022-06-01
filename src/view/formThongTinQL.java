@@ -113,7 +113,7 @@ public class formThongTinQL extends javax.swing.JFrame {
 
     public void nhanVien() {
         thongTin();
-        matKhau(true, false); //không cho thấy
+        matKhau(false, false); //không cho thấy
         button();
     }
 
@@ -221,11 +221,7 @@ public class formThongTinQL extends javax.swing.JFrame {
                 return true;
             }
         } else {
-            if (isHoValid() == 1 && isTenValid() == 1 && isSDTValid() == 1) {
-                return true;
-            } else {
-                return false;
-            }
+            return isHoValid() == 1 && isTenValid() == 1 && isSDTValid() == 1;
         }
         return false;
     }
@@ -342,10 +338,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.ipady = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(17, 44, 0, 0);
         jPanel2.add(jLabel1, gridBagConstraints);
 
         txtMaQL.setEnabled(false);
@@ -354,8 +346,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(17, 0, 0, 0);
         jPanel2.add(txtMaQL, gridBagConstraints);
 
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
@@ -363,10 +353,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 13;
-        gridBagConstraints.ipady = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 44, 0, 0);
         jPanel2.add(jLabel2, gridBagConstraints);
 
         txtHo.setEnabled(false);
@@ -380,7 +366,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(txtHo, gridBagConstraints);
 
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
@@ -388,10 +373,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 7;
-        gridBagConstraints.ipady = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 44, 0, 0);
         jPanel2.add(jLabel3, gridBagConstraints);
 
         txtTen.setEnabled(false);
@@ -405,7 +386,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(txtTen, gridBagConstraints);
 
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
@@ -413,10 +393,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = 38;
-        gridBagConstraints.ipady = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 44, 0, 0);
         jPanel2.add(jLabel4, gridBagConstraints);
 
         txtDiaChi.setEnabled(false);
@@ -425,7 +401,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(txtDiaChi, gridBagConstraints);
 
         jLabel5.setForeground(new java.awt.Color(0, 102, 204));
@@ -433,9 +408,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.ipady = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 44, 0, 0);
         jPanel2.add(jLabel5, gridBagConstraints);
 
         txtSDT.setEnabled(false);
@@ -449,21 +421,18 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(txtSDT, gridBagConstraints);
 
         labelMKMoi.setForeground(new java.awt.Color(0, 102, 204));
         labelMKMoi.setText("Mật Khẩu Mới");
+        labelMKMoi.setMinimumSize(new java.awt.Dimension(0, 0));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 32;
-        gridBagConstraints.ipady = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(labelMKMoi, gridBagConstraints);
 
         MKmoi.setEnabled(false);
-        MKmoi.setMinimumSize(new java.awt.Dimension(140, 28));
+        MKmoi.setMinimumSize(new java.awt.Dimension(0, 0));
         MKmoi.setPreferredSize(new java.awt.Dimension(140, 28));
         MKmoi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -473,21 +442,18 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 45);
         jPanel2.add(MKmoi, gridBagConstraints);
 
         labelXacNhan.setForeground(new java.awt.Color(0, 102, 204));
-        labelXacNhan.setText("Xác Nhận Mật Khẩu");
+        labelXacNhan.setText("Xác Nhận");
+        labelXacNhan.setMinimumSize(new java.awt.Dimension(0, 0));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipady = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(labelXacNhan, gridBagConstraints);
 
         XNMK.setEnabled(false);
-        XNMK.setMinimumSize(new java.awt.Dimension(140, 28));
+        XNMK.setMinimumSize(new java.awt.Dimension(0, 0));
         XNMK.setPreferredSize(new java.awt.Dimension(140, 28));
         XNMK.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -497,14 +463,12 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 45);
         jPanel2.add(XNMK, gridBagConstraints);
 
         cbHienMK.setForeground(new java.awt.Color(0, 102, 204));
         cbHienMK.setText("Hiện Mật Khẩu");
         cbHienMK.setEnabled(false);
-        cbHienMK.setMinimumSize(new java.awt.Dimension(140, 28));
+        cbHienMK.setMinimumSize(new java.awt.Dimension(0, 0));
         cbHienMK.setPreferredSize(new java.awt.Dimension(140, 28));
         cbHienMK.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -514,23 +478,18 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 45);
         jPanel2.add(cbHienMK, gridBagConstraints);
 
         labelMatKhauCu.setForeground(new java.awt.Color(0, 102, 204));
         labelMatKhauCu.setText("Mật Khẩu Cũ");
+        labelMatKhauCu.setMinimumSize(new java.awt.Dimension(0, 0));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 37;
-        gridBagConstraints.ipady = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(17, 0, 0, 0);
         jPanel2.add(labelMatKhauCu, gridBagConstraints);
 
         MKC.setEnabled(false);
-        MKC.setMinimumSize(new java.awt.Dimension(140, 28));
+        MKC.setMinimumSize(new java.awt.Dimension(0, 0));
         MKC.setPreferredSize(new java.awt.Dimension(140, 28));
         MKC.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -540,8 +499,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(17, 0, 0, 45);
         jPanel2.add(MKC, gridBagConstraints);
 
         HoError.setForeground(new java.awt.Color(255, 0, 0));
@@ -551,7 +508,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(HoError, gridBagConstraints);
 
         TenError.setForeground(new java.awt.Color(255, 0, 0));
@@ -561,18 +517,15 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(TenError, gridBagConstraints);
 
         MKCError.setForeground(new java.awt.Color(255, 0, 0));
         MKCError.setText("jLabel8");
-        MKCError.setMinimumSize(new java.awt.Dimension(140, 28));
+        MKCError.setMinimumSize(new java.awt.Dimension(0, 0));
         MKCError.setPreferredSize(new java.awt.Dimension(140, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 45);
         jPanel2.add(MKCError, gridBagConstraints);
 
         DiaChiError.setForeground(new java.awt.Color(255, 0, 0));
@@ -582,29 +535,24 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel2.add(DiaChiError, gridBagConstraints);
 
         MKMError.setForeground(new java.awt.Color(255, 0, 0));
         MKMError.setText("jLabel10");
-        MKMError.setMinimumSize(new java.awt.Dimension(140, 28));
+        MKMError.setMinimumSize(new java.awt.Dimension(0, 0));
         MKMError.setPreferredSize(new java.awt.Dimension(140, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 45);
         jPanel2.add(MKMError, gridBagConstraints);
 
         XNError.setForeground(new java.awt.Color(255, 0, 0));
         XNError.setText("jLabel11");
-        XNError.setMinimumSize(new java.awt.Dimension(140, 28));
+        XNError.setMinimumSize(new java.awt.Dimension(0, 0));
         XNError.setPreferredSize(new java.awt.Dimension(140, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 45);
         jPanel2.add(XNError, gridBagConstraints);
 
         SDTError.setForeground(new java.awt.Color(255, 0, 0));
@@ -614,8 +562,6 @@ public class formThongTinQL extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 18, 0);
         jPanel2.add(SDTError, gridBagConstraints);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -663,10 +609,12 @@ public class formThongTinQL extends javax.swing.JFrame {
                     String matKhau;
 //                    if (MKmoi.getPassword().length != 0) {
                     matKhau = new String(MKmoi.getPassword());
-                    if (!Dao_NhanVien.dungMK(ql.getTenTK(), new String(MKC.getPassword()))) {
-                        MKCError.setText("Mật khẩu cũ không đúng!");
-                        System.out.println("");
-                        return;
+                    if (doiMatKhau()) {
+                        if (!Dao_NhanVien.dungMK(ql.getTenTK(), new String(MKC.getPassword()))) {
+                            MKCError.setText("Mật khẩu cũ không đúng!");
+                            System.out.println("");
+                            return;
+                        }
                     }
 //                    } else {
 //                        matKhau = "";

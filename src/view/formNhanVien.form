@@ -150,13 +150,6 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="jPanel37">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                        <EtchetBorder/>
-                      </Border>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
                       <BorderConstraints direction="After"/>
@@ -188,7 +181,7 @@
                               <Component id="jLabel1" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="comboMAQUAY" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="118" max="32767" attributes="0"/>
+                              <EmptySpace pref="122" max="32767" attributes="0"/>
                               <Component id="huyButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="SuaButton" min="-2" max="-2" attributes="0"/>
@@ -326,6 +319,9 @@
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                 <TitledBorder justification="2" title="H&#xf3;a &#x110;&#x1a1;n">
+                                  <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                                    <EtchetBorder/>
+                                  </Border>
                                   <Color PropertyName="color" blue="ff" green="0" red="0" type="rgb"/>
                                 </TitledBorder>
                               </Border>
@@ -413,6 +409,9 @@
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                 <TitledBorder justification="2" title="Chi Ti&#x1ebf;t">
+                                  <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                                    <EtchetBorder/>
+                                  </Border>
                                   <Color PropertyName="color" blue="cc" green="33" red="0" type="rgb"/>
                                 </TitledBorder>
                               </Border>
@@ -557,7 +556,7 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="324" max="-2" attributes="0"/>
                                       <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="137" max="32767" attributes="0"/>
+                                      <EmptySpace pref="141" max="32767" attributes="0"/>
                                       <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtTongTien" min="-2" max="-2" attributes="0"/>
@@ -614,7 +613,7 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane14" alignment="0" pref="677" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane14" alignment="0" pref="681" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">

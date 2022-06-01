@@ -213,8 +213,6 @@ public class formQuanLy extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         tabPaneMainMenu.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         tabPaneMainMenu.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         tabPaneMainMenu.setTabPlacement(javax.swing.JTabbedPane.LEFT);
@@ -233,11 +231,11 @@ public class formQuanLy extends javax.swing.JFrame {
         tabQLNV.setLayout(tabQLNVLayout);
         tabQLNVLayout.setHorizontalGroup(
             tabQLNVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabPaneNV, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
+            .addComponent(tabPaneNV, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE)
         );
         tabQLNVLayout.setVerticalGroup(
             tabQLNVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabPaneNV, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addComponent(tabPaneNV, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
         );
 
         tabPaneMainMenu.addTab("", new javax.swing.ImageIcon(getClass().getResource("/icon/employees.png")), tabQLNV, "Quản Lý Nhân Viên"); // NOI18N
@@ -248,11 +246,11 @@ public class formQuanLy extends javax.swing.JFrame {
         tabQLHD.setLayout(tabQLHDLayout);
         tabQLHDLayout.setHorizontalGroup(
             tabQLHDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabPaneQLHD, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
+            .addComponent(tabPaneQLHD, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE)
         );
         tabQLHDLayout.setVerticalGroup(
             tabQLHDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabPaneQLHD, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addComponent(tabPaneQLHD, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
         );
 
         tabPaneMainMenu.addTab("", new javax.swing.ImageIcon(getClass().getResource("/icon/bills.png")), tabQLHD, "Quản Lý Hóa Đơn"); // NOI18N
@@ -263,11 +261,11 @@ public class formQuanLy extends javax.swing.JFrame {
         tabMenu.setLayout(tabMenuLayout);
         tabMenuLayout.setHorizontalGroup(
             tabMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabPaneMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
+            .addComponent(tabPaneMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE)
         );
         tabMenuLayout.setVerticalGroup(
             tabMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabPaneMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addComponent(tabPaneMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
         );
 
         tabPaneMainMenu.addTab("", new javax.swing.ImageIcon(getClass().getResource("/icon/drinks-menus.png")), tabMenu, "Quản Lý Menu"); // NOI18N
@@ -278,11 +276,11 @@ public class formQuanLy extends javax.swing.JFrame {
         tabPhieuNhap.setLayout(tabPhieuNhapLayout);
         tabPhieuNhapLayout.setHorizontalGroup(
             tabPhieuNhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
+            .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE)
         );
         tabPhieuNhapLayout.setVerticalGroup(
             tabPhieuNhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
         );
 
         tabPaneMainMenu.addTab("", new javax.swing.ImageIcon(getClass().getResource("/icon/receipts.png")), tabPhieuNhap, "Quản Lý Phiếu Nhập"); // NOI18N
@@ -293,11 +291,11 @@ public class formQuanLy extends javax.swing.JFrame {
         tabThongKe.setLayout(tabThongKeLayout);
         tabThongKeLayout.setHorizontalGroup(
             tabThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
+            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE)
         );
         tabThongKeLayout.setVerticalGroup(
             tabThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
         );
 
         tabPaneMainMenu.addTab("", new javax.swing.ImageIcon(getClass().getResource("/icon/stats.png")), tabThongKe, "Thống Kê"); // NOI18N
@@ -308,11 +306,11 @@ public class formQuanLy extends javax.swing.JFrame {
         tabNguyenLieu.setLayout(tabNguyenLieuLayout);
         tabNguyenLieuLayout.setHorizontalGroup(
             tabNguyenLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE)
         );
         tabNguyenLieuLayout.setVerticalGroup(
             tabNguyenLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
         );
 
         tabPaneMainMenu.addTab("", new javax.swing.ImageIcon(getClass().getResource("/icon/coffee-grinder.png")), tabNguyenLieu, "Nguyên Liệu"); // NOI18N

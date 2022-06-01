@@ -82,9 +82,10 @@ public final class panelTonKho extends javax.swing.JPanel {
 
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
 
-        jPanel49.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Kiểm Tra Số Lượng Tồn", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 14), new java.awt.Color(0, 0, 204))); // NOI18N
+        jPanel49.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Kiểm Tra Số Lượng Tồn", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 14), new java.awt.Color(0, 0, 204))); // NOI18N
         jPanel49.setMaximumSize(new java.awt.Dimension(2147483647, 150));
         jPanel49.setMinimumSize(new java.awt.Dimension(261, 100));
+        jPanel49.setPreferredSize(new java.awt.Dimension(637, 65));
         jPanel49.setLayout(new java.awt.GridBagLayout());
 
         jLabel30.setForeground(new java.awt.Color(0, 102, 204));
@@ -163,7 +164,7 @@ public final class panelTonKho extends javax.swing.JPanel {
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
         );
 
         add(jPanel50);
