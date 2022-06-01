@@ -47,7 +47,7 @@ public class dialogStartProgram extends javax.swing.JDialog {
                             progressStart.setValue(100);
                             progressStart.setString("Không Thể Khởi Động Chương Trình");
                             break;
-                        } else {
+                        } else { 
                             progressStart.setValue(100);
                             progressStart.setString("Starting Program");
                         }
@@ -156,7 +156,7 @@ public class dialogStartProgram extends javax.swing.JDialog {
          */
         try {
             for (var info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
