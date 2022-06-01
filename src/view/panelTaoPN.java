@@ -124,16 +124,17 @@ public final class panelTaoPN extends javax.swing.JPanel {
         } else if (isSoLuong() == 0) {
             JOptionPane.showMessageDialog(this, "Chưa nhập số lượng !");
             return false;
-        } else if (isGiaTien() == -1) {
+        }else if (isSoLuong() == -1) {
+            JOptionPane.showMessageDialog(null, "không phải số, nhập lại số lượng!");
+            return false;
+        } 
+        else if (isGiaTien() == -1) {
             JOptionPane.showMessageDialog(null, "không phải số, nhập lại giá tiền!");
             return false;
         } else if (isGiaTien() == 0) {
             JOptionPane.showMessageDialog(this, "Chưa nhập giá tiền!");
             return false;
-        } else if (isSoLuong() == -1) {
-            JOptionPane.showMessageDialog(null, "không phải số, nhập lại số lượng!");
-            return false;
-        }
+        } 
         return true;
     }
 
