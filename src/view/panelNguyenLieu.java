@@ -64,6 +64,35 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
         }
        
     }
+ private int isTenNL() {
+        String slcan = txtTenNL.getText().trim();
+        if (slcan.equals("")) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+ private int isDonvitinh() {
+        String slcan = txtDVT.getText().trim();
+        if (slcan.equals("")) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+ private boolean isAllValid() {
+        if (isTenNL() == 1 && isDonvitinh() == 1) {
+            return true;
+        } else if (isTenNL() == 0) {
+            JOptionPane.showMessageDialog(this, "Chưa nhập tên nguyên liệu!");
+            return false;
+        } else if (isDonvitinh() == 0) {
+            JOptionPane.showMessageDialog(this, "Chưa nhập đơn vị tính!");
+            return false;
+        } 
+        return true;
+    }
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -380,6 +409,7 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemActionPerformed
+        if (isAllValid()) {       
                 String Ma_Nguyen_Lieu= txtMaNL.getText().trim();
                 String Ten_NL = txtTenNL.getText().trim();
                 String DVT= txtDVT.getText().trim();
@@ -399,10 +429,8 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
                 this.layDSNL();
                 }catch(Exception e){
                     System.out.println(e);
-                }
-                
-                
-   
+                }       
+        }
     }//GEN-LAST:event_ThemActionPerformed
 
     private void cbbtimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbtimkiemActionPerformed

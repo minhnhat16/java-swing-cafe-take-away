@@ -24,6 +24,8 @@ import javax.swing.table.DefaultTableModel;
 import model.NguyenLieu;
 import model.TaoPN;
 import model.QuayCafe;
+import valid.Regex;
+import valid.Valid;
 
 /**
  *
@@ -84,6 +86,55 @@ public final class panelTaoPN extends javax.swing.JPanel {
     public static String getDate(String ngay) {
         String[] a = ngay.split("-");
         return a[2] + "/" + a[1] + "/" + a[0];
+    }
+    private int isMaPhieuNhap() {
+        String slcan = txt_MaPhieuNhap.getText().trim();
+        if (slcan.equals("")) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    private int isSoLuong() {
+        String slcan = txtSoLuong.getText().trim();
+        if (slcan.equals("")) {
+            return 0;
+        } else if (!Valid.isTextValid(slcan, Regex.SLCAN)) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+    private int isGiaTien() {
+        String slcan = txtGiaTien.getText().trim();
+        if (slcan.equals("")) {
+            return 0;
+        } else if (!Valid.isTextValid(slcan, Regex.SLCAN)) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+    private boolean isAllValid() {
+        if (isMaPhieuNhap() == 1 && isSoLuong() == 1 && isGiaTien() == 1) {
+            return true;
+        } else if (isMaPhieuNhap() == 0) {
+            JOptionPane.showMessageDialog(this, "Chưa nhập mã phiếu!");
+            return false;
+        } else if (isSoLuong() == 0) {
+            JOptionPane.showMessageDialog(this, "Chưa nhập số lượng !");
+            return false;
+        } else if (isGiaTien() == -1) {
+            JOptionPane.showMessageDialog(null, "không phải số, nhập lại giá tiền!");
+            return false;
+        } else if (isGiaTien() == 0) {
+            JOptionPane.showMessageDialog(this, "Chưa nhập giá tiền!");
+            return false;
+        } else if (isSoLuong() == -1) {
+            JOptionPane.showMessageDialog(null, "không phải số, nhập lại số lượng!");
+            return false;
+        }
+        return true;
     }
 
     @SuppressWarnings("unchecked")
@@ -414,34 +465,35 @@ public final class panelTaoPN extends javax.swing.JPanel {
     }
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         ///LAY MA NHAN VIEN . ADD VO DB . VI DU MA_NV=1
-        String maphieunhap = txt_MaPhieuNhap.getText();
-        if (this.isExistMA_PN(maphieunhap)) {
+        if (isAllValid()) {
+            String maphieunhap = txt_MaPhieuNhap.getText();
+            if (this.isExistMA_PN(maphieunhap)) {
             JOptionPane.showMessageDialog(this, "Mã phiếu nhập đã tồn tại!");
             System.out.println("-(panelTaoPN.java Line:399)-THONG BAO MA PHIEU NHAP DA TON TAI");
             return;
-        }
-        int MA_NV = 101;
+         }
+            int MA_NV = 101;
 
-        int MA_QUAY = 1;
+            int MA_QUAY = 1;
 
-        String TenNguyenLieu = ComboxNguyenLieu.getSelectedItem().toString();
-        try {
-            String item=comboxQuay.getSelectedItem().toString();
-            String[] l = item.split(" ");
-            MA_QUAY = Integer.parseInt(l[1]);
+            String TenNguyenLieu = ComboxNguyenLieu.getSelectedItem().toString();
+            try {
+                String item=comboxQuay.getSelectedItem().toString();
+                String[] l = item.split(" ");
+                MA_QUAY = Integer.parseInt(l[1]);
           
-            SoLuong = Integer.parseInt(txtSoLuong.getText());
-            GiaTien = Integer.parseInt(txtGiaTien.getText());
-            System.out.println("................."+SoLuong);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        //position selected of combox ten nguyen lieu
-        int posSelectedNguyenLieu = ComboxNguyenLieu.getSelectedIndex();
-        //lay thongtin nguyen lieu da selected (maNL,donViTinh,tenNL)
-        NguyenLieu posNL = lsnguyenlieu.get(posSelectedNguyenLieu);
+                SoLuong = Integer.parseInt(txtSoLuong.getText());
+                GiaTien = Integer.parseInt(txtGiaTien.getText());
+                System.out.println("................."+SoLuong);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            //position selected of combox ten nguyen lieu
+            int posSelectedNguyenLieu = ComboxNguyenLieu.getSelectedIndex();
+            //lay thongtin nguyen lieu da selected (maNL,donViTinh,tenNL)
+            NguyenLieu posNL = lsnguyenlieu.get(posSelectedNguyenLieu);
 
-        lsThem.add(new TaoPN(maphieunhap, posNL.getMaNL()+"", TenNguyenLieu, posNL.getDonViTinh(), SoLuong, GiaTien, MA_NV, MA_QUAY, this.getDateLocal()));
+            lsThem.add(new TaoPN(maphieunhap, posNL.getMaNL()+"", TenNguyenLieu, posNL.getDonViTinh(), SoLuong, GiaTien, MA_NV, MA_QUAY, this.getDateLocal()));
         txt_MaPhieuNhap.setEditable(false);
         comboxQuay.setEnabled(false);
         tablePhieuNhap.setEnabled(false);
@@ -455,6 +507,7 @@ public final class panelTaoPN extends javax.swing.JPanel {
             GiaTien
         });
         lb_summoney.setText(String.valueOf(this.sumMoney));
+        }
     }//GEN-LAST:event_btnThemActionPerformed
 
     //hien thi lsThem vao Table
