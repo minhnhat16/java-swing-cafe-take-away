@@ -409,14 +409,25 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemActionPerformed
-        if (isAllValid()) {       
-                String Ma_Nguyen_Lieu= txtMaNL.getText().trim();
-                String Ten_NL = txtTenNL.getText().trim();
-                String DVT= txtDVT.getText().trim();
+        if (isAllValid()) {
+            String Ma_Nguyen_Lieu= txtMaNL.getText().trim();
+            String Ten_NL = txtTenNL.getText().trim();
+            String DVT= txtDVT.getText().trim();
 
-                dtm.setRowCount(0);
-                 try{
-             //kiểm tra diệu diện khác rỗng, mã nguyen liẹu trùng
+            dtm.setRowCount(0);
+            int intMaNL;
+
+            try{
+                //kiểm tra diệu diện khác rỗng, mã nguyen liẹu trùng
+                intMaNL = Integer.parseInt(Ma_Nguyen_Lieu);
+                if(Dao_NguyenLieu.IsMaNguyenLieuExists((intMaNL))){
+                    System.out.println("---không lưu vào CSDL--");
+                    JOptionPane.showMessageDialog(this, "Nguyên Liệu đã tồn tại!");
+                    txtMaNL.setText("");
+                    txtTenNL.setText("");
+                    txtDVT.setText("");
+                    return;
+                }
                 if (Dao_NguyenLieu.luuNguyenLieu(Ten_NL, DVT )!=0 ){
                     System.out.println("---Lưu thành công vào CSDL--");
                     JOptionPane.showMessageDialog(this, "Thêm thành công!");
@@ -427,12 +438,11 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
                     System.out.println("---Không the luu vào CSDL--");
                 }
                 this.layDSNL();
-                }catch(Exception e){
-                    System.out.println(e);
-                }       
+            }catch(Exception e){
+                System.out.println(e);
+            }
         }
     }//GEN-LAST:event_ThemActionPerformed
-
     private void cbbtimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbtimkiemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbbtimkiemActionPerformed
@@ -508,26 +518,45 @@ public final class panelNguyenLieu extends javax.swing.JPanel {
          txtMaNL.setText(NL.getMaNL()+"");
         txtTenNL.setText(NL.getTenNL());
         txtDVT.setText(NL.getDonViTinh());
+        Them.enable(false);
     }//GEN-LAST:event_tableNguyenLieuMouseClicked
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        try{
-        rowSelectedInTable =tableNguyenLieu.getSelectedRow();
-        }catch(Exception e){
-           this.rowSelectedInTable=-1;
+        // Lấy chỉ số hàng được chọn
+        int rowSelectedInTable = tableNguyenLieu.getSelectedRow();
+
+        // Kiểm tra nếu không có hàng nào được chọn
+        if (rowSelectedInTable == -1) {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn nguyên liệu cần xóa!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        NguyenLieu NL=this.lsAllNL.get(rowSelectedInTable);
-        if(rowSelectedInTable==-1){
-          
-       }else{
-           this.lsAllNL.remove(rowSelectedInTable);
-           Dao_NguyenLieu.xoaNL(NL.getMaNL());
-           this.showDS();
-            txtMaNL.setText("");
-            txtTenNL.setText("");
-            txtDVT.setText("");
-            JOptionPane.showMessageDialog(this, "Đã xóa nguyên liệu!");
-       }
+
+        // Kiểm tra nếu chỉ số hàng hợp lệ trong danh sách
+        if (rowSelectedInTable >= 0 && rowSelectedInTable < lsAllNL.size()) {
+            try {
+                NguyenLieu NL = this.lsAllNL.get(rowSelectedInTable);
+
+                // Xóa nguyên liệu từ danh sách và cơ sở dữ liệu
+                this.lsAllNL.remove(rowSelectedInTable);
+                Dao_NguyenLieu.xoaNL(NL.getMaNL());
+
+                // Cập nhật hiển thị danh sách và làm mới các trường nhập liệu
+                this.showDS();
+                txtMaNL.setText("");
+                txtTenNL.setText("");
+                txtDVT.setText("");
+
+                // Hiển thị thông báo thành công
+                JOptionPane.showMessageDialog(this, "Đã xóa nguyên liệu!");
+            } catch (Exception e) {
+                // Xử lý ngoại lệ nếu có lỗi xảy ra
+                JOptionPane.showMessageDialog(this, "Có lỗi xảy ra khi xóa nguyên liệu: " + e.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
+            }
+        } else {
+            // Nếu chỉ số hàng không hợp lệ trong danh sách
+            JOptionPane.showMessageDialog(this, "Nguyên liệu không tồn tại trong danh sách!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void btnTimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimkiemActionPerformed

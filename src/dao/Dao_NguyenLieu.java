@@ -22,6 +22,7 @@ import server.KetNoi;
  * @author nghia
  */
 public class Dao_NguyenLieu {
+    public static Dao_NguyenLieu instance;
     //lấy ds
     public static List<NguyenLieu> layDS(){
         List<NguyenLieu> list=new ArrayList<>();
@@ -146,5 +147,22 @@ public class Dao_NguyenLieu {
         }
         return 0;
     }
-    
+    public static boolean IsMaNguyenLieuExists(Integer maNL){
+        NguyenLieu nl=new NguyenLieu();
+        String sql="select * from nguyen_lieu where ma_NL="+maNL;
+        Connection con=KetNoi.layKetNoi();
+        try {
+            Statement stm=con.createStatement();
+            ResultSet rs=stm.executeQuery(sql);
+            while (rs.next()) {
+                nl.setMaNL(rs.getInt(1));
+                nl.setTenNL(rs.getString(2));
+                nl.setDonViTinh(rs.getString(3));
+            }
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(Dao_NguyenLieu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false    ;
+    }
 }
