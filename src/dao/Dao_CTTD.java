@@ -16,10 +16,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.CTTD;
-/**
- *
- * @author nghia
- */
+
 public class Dao_CTTD {
     public static int themCTTD(int maTD, int maNL, float slCan){
         String sql="insert into ct_td values(?, ?, ?)";

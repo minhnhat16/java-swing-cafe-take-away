@@ -23,6 +23,21 @@ import server.KetNoi;
  */
 public class Dao_ThucDon {
 
+    private static boolean hasForeignKey(int id) {
+        String sql = "SELECT COUNT(*) FROM some_table WHERE fk_column = ?";
+        Connection c = KetNoi.layKetNoi();
+        try (PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1) > 0;
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Dao_QuayCafe.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
     public static List<ThucDon> layDSTD() {
         List<ThucDon> list = new ArrayList<>();
         String sql = "select * from thuc_don";
@@ -67,10 +82,26 @@ public class Dao_ThucDon {
             return s.executeUpdate(sql);
         } catch (SQLException ex) {
             Logger.getLogger(Dao_QuayCafe.class.getName()).log(Level.SEVERE, null, ex);
+            return -1;
         }
-        return 0;
     }
-    
+    public static int newXoaTD(int id) {
+        // Kiểm tra sự tồn tại của khóa ngoại trước khi xóa
+        if (hasForeignKey(id)) {
+            Logger.getLogger(Dao_QuayCafe.class.getName()).log(Level.WARNING, "Không thể xóa vì tồn tại khóa ngoại tham chiếu");
+            return -1; // Trả về -1 nếu tồn tại khóa ngoại
+        }
+
+        String sql = "DELETE FROM thuc_don WHERE ma_td = ?";
+        Connection c = KetNoi.layKetNoi();
+        try (PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            return ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(Dao_QuayCafe.class.getName()).log(Level.SEVERE, null, ex);
+            return -1;
+        }
+    }
     public static int suaTD(int id, String ten, int gia){
         String sql="update thuc_don set ten_do_uong=?, gia_tien=? where ma_td=?";
         Connection c=KetNoi.layKetNoi();

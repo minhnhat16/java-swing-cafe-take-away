@@ -17,10 +17,7 @@ import java.util.logging.Logger;
 import model.CaNhanVien;
 import server.KetNoi;
 
-/**
- *
- * @author nghia
- */
+
 public class Dao_CaNhanVien {
 
     public static int themCaNhanVien(int maNV, String maCa, String thu, int maQuay) {

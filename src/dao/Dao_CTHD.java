@@ -16,10 +16,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import server.KetNoi;
 
-/**
- *
- * @author nghia
- */
 public class Dao_CTHD {
     public static List<CTHD> layDS(){
         List<CTHD> list=new ArrayList<>();

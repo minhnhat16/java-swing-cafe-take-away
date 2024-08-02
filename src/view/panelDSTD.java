@@ -350,7 +350,7 @@ public class panelDSTD extends javax.swing.JPanel {
             int row = tableDSTD.getSelectedRow();
             if (row != -1) {
                 int id = (int) tableDSTD.getValueAt(row, 0);
-                if (Dao_ThucDon.xoaTD(id) != 0) {
+                if (isAllValid() && Dao_ThucDon.xoaTD(id) > 0 ) {
                     layDSTD(Dao_ThucDon.layDSTD());
                     panelLapHD.listDSTD=Dao_ThucDon.layDSTD();
                         panelLapHD.loadComboBoxThucDon(panelLapHD.listDSTD);

@@ -5,10 +5,7 @@
  */
 package model;
 
-/**
- *
- * @author nghia
- */
+
 public class CTPN {
     private String maPN;
     private String maNL;

@@ -5,10 +5,6 @@
  */
 package model;
 
-/**
- *
- * @author nghia
- */
 public class CTHD {
     private String maHD;
     private int maTD;

@@ -12,10 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import server.KetNoi;
 
-/**
- *
- * @author D e l l
- */
+
 public class Dao_CTPN {
      public static int themCTPN(String MA_PN,String MA_NL,float SO_LUONG_NL,int GIA_TIEN) {
          String sql = "insert into CT_PN values(?, ?, ?,?)";

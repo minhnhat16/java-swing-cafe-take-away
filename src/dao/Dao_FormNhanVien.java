@@ -21,10 +21,7 @@ import model.TaiKhoan;
 import server.KetNoi;
 import view.panelLapHD;
 
-/**
- *
- * @author nguye
- */
+
 public class Dao_FormNhanVien {
 
     private Connection conn;

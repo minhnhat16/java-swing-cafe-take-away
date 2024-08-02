@@ -19,10 +19,7 @@ import server.KetNoi;
 import view.formThemNV;
 import view.panelDSNV;
 
-/**
- *
- * @author nghia
- */
+
 public class Dao_CaLam {
 
     public static int themCaLam(String maCa, String gioBD, String gioKT) {

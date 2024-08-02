@@ -240,7 +240,7 @@ public class panelDSNV extends javax.swing.JPanel {
                 if (!formThongTinNVOpened) {
                     formThongTinNV t = new formThongTinNV(n);
                     t.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-                    t.nhanVien();
+                    t.getNv();
                     t.setSize(600, 350);
                     t.setVisible(true);
                     formThongTinNVOpened = true;//dánh đấu đẫ mở
