@@ -8,6 +8,8 @@ import dao.Dao_NhanVien;
 import dao.Dao_QuayCafe;
 import dao.Dao_ThucDon;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.text.ParseException;
@@ -47,6 +49,9 @@ public class panelLapHD extends javax.swing.JPanel {
         listDSTD = Dao_ThucDon.layDSTD();
         //listDSTD=new ArrayList<>();
         loadComboBoxQuay(Dao_QuayCafe.layDSQuay());
+        // Thêm hành động khi chọn đồ uống
+
+
         loadComboBoxThucDon(listDSTD);
         khoiTao();
         setMaxLength();
@@ -691,6 +696,14 @@ public class panelLapHD extends javax.swing.JPanel {
     private void cbbTenDoUongItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbbTenDoUongItemStateChanged
         // TODO add your handling code here:
 
+        int id = Dao_ThucDon.layMa(String.valueOf(cbbTenDoUong.getSelectedItem()));
+        ThucDon td = Dao_ThucDon.layThucDon_Ma(id);
+        if (td != null) {
+            // Lấy ID của đồ uống được chọn
+            int drinkId = td.getId();
+            System.out.println("ID của đồ uống được chọn: " + drinkId);
+            // Thực hiện các hành động khác nếu cần
+        }
     }//GEN-LAST:event_cbbTenDoUongItemStateChanged
 
     private void tableLapHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableLapHoaDonMouseClicked

@@ -9,10 +9,7 @@ import model.NhanVien;
 import valid.Regex;
 import valid.Valid;
 
-/**
- *
- * @author nghia
- */
+
 public class formThongTinNV extends javax.swing.JFrame {
 
     /**
@@ -440,6 +437,7 @@ public class formThongTinNV extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (evt.getButton() == MouseEvent.BUTTON1) {
             MKmoi.setVisible(true);
+            buttonLuu.setEnabled(false);
             labelMatKhau.setVisible(true);
             cbHienMK.setVisible(true);
         }
